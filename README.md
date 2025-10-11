@@ -15,11 +15,11 @@ The following official datasets are used in this study. Please download the exac
 The usage follows official YOLOv8 conventions with specific parameters as used in the manuscript:
 
 2.1 Inference on Imagespython detect.py \
---source /path/to/your/image.jpg \ # Replace with dataset path (e.g., DUT-Anti-UAV/val/images) --weights fegp_yolov8_best.pt \ # Pre-trained weights (see Section 3) --img 640 \ # Input size consistent with experiments --conf 0.25 \ # Confidence threshold used in all evaluations --save-img # Save visualized results
+--source /path/to/your/image.jpg \ # Replace with dataset path (e.g., DUT-Anti-UAV/val/images) --weights best.pt \ # Pre-trained weights (see Section 3) --img 640 \ # Input size consistent with experiments --conf 0.25 \ # Confidence threshold used in all evaluations --save-img # Save visualized results
 
 2.2 Inference on Videospython detect.py \
 --source /path/to/your/video.mp4
---weights fegp_yolov8_best.pt
+--weights best.pt
 --img 640
 --conf 0.25
 --save-video
@@ -27,7 +27,7 @@ The usage follows official YOLOv8 conventions with specific parameters as used i
 3. Pretrained Weights
 Pre-trained weights (trained on DUT-Anti-UAV training set) are available for direct use:
 
-| Weight File | Performance on DUT-Anti-UAV Validation Set | Download Link | |--------------------|--------------------------------------------|--------------------------------------------------------------------------------| | fegp_yolov8_best.pt| mAP50=95.4%, FPS=107.9±2.3, Size=3.4MB | Google Drive | Baidu Cloud (提取码: ABCD) |
+| Weight File | Performance on DUT-Anti-UAV Validation Set | Download Link | |--------------------|--------------------------------------------|--------------------------------------------------------------------------------| | best.pt| mAP50=95.4%, FPS=107.9±2.3, Size=3.4MB |On the project homepage|
 
 4. Environment Setup
 To ensure exact reproduction of results, install the following dependencies:
