@@ -33,14 +33,13 @@ def get_weight_size(path):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--weights', type=str, default='runs/train/exp16/weights/best.pt', help='trained weights path')
-    parser.add_argument('--batch', type=int, default=1, help='total batch size for all GPUs')
-    parser.add_argument('--imgs', nargs='+', type=int, default=[640, 640], help='[height, width] image sizes')
-    parser.add_argument('--device', default='', help='cuda device, i.e. 0 or 0,1,2,3 or cpu')
-    parser.add_argument('--warmup', default=500, type=int, help='warmup time')
-    parser.add_argument('--testtime', default=2000, type=int, help='test time')
-    parser.add_argument('--half', action='store_true', default=True, help='fp16 mode.')
-    opt = parser.parse_args()
+    parser.add_argument('--weights', type=str, default='best.pt', help='trained weights path')
+    parser.add_argument('--batch', type=int, default=1, help='total batch size (1 as in paper)')
+    parser.add_argument('--imgs', nargs='+', type=int, default=[640, 640], help='image size (640x640 as in paper)')
+    parser.add_argument('--device', default='', help='cuda device (use RTX 3080 Ti as in paper)')
+    parser.add_argument('--warmup', default=50, type=int, help='warmup iterations (50 as in paper)')  
+    parser.add_argument('--testtime', default=1000, type=int, help='test images (1000 as in paper)')  
+    parser.add_argument('--half', action='store_true', default=True, help='fp16 mode')
 
     device = select_device(opt.device, batch=opt.batch)
     
