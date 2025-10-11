@@ -3,6 +3,8 @@ This project is directly related to the manuscript in The AIP: "Enhanced Feature
 
 This project uses the self-developed lightweight model, FEGP-YOLOv8, to achieve real-time UAV target detection. Both the accuracy and real-time performance have been significantly improved.
 
+This project provides a pre-trained weight file, best.pt, on its homepage, along with scripts for training, testing, validation, calculating FPS, and generating heatmaps.
+
 1. Datasets
 The following official datasets are used in this study. Please download the exact versions via the links below for experiment reproducibility:
 
